@@ -20,6 +20,11 @@ repositories {
         name = 'ParchmentMC'
         url = 'https://maven.parchmentmc.org'
     }
+    maven {
+        name = "Terraformers"
+        url = "https://maven.terraformersmc.com/"
+    }
+    maven { url 'https://maven.wispforest.io' }
 }
 
 dependencies {
@@ -33,6 +38,15 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
+
+    annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
+    include "io.wispforest:owo-sentinel:${project.owo_version}"
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/soaring-phantoms.accesswidener")
 }
 
 processResources {

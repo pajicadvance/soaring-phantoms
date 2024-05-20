@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "soaring-phantoms",
   "version": "${version}",
-  "name": "soaring-phantoms",
+  "name": "Soaring Phantoms",
   "description": "Spawn phantoms above a certain altitude, with a chance increasing the higher up you are. Fully configurable.",
   "authors": [
     "pajic"
@@ -12,7 +12,7 @@
     "repo": "https://github.com/pajicadvance/soaring-phantoms"
   },
   "license": "MIT",
-  "icon": "assets/soaring-phantoms/icon.png",
+  "icon": "soaring-phantoms.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -22,6 +22,7 @@
   "mixins": [
     "soaring-phantoms.mixins.json"
   ],
+  "accessWidener": "soaring-phantoms.accesswidener",
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
