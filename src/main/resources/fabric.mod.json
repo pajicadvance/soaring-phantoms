@@ -27,9 +27,9 @@
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}",
-    "owo-lib": "^0.12.6"
+    "owo-lib": "^0.12.8"
   },
   "recommends": {
-    "modmenu": "^9.0.0"
+    "modmenu": "^10.0.0"
   }
 }
