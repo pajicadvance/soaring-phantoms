@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.pajic.soaring_phantoms.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "PhantomSpawnerMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
