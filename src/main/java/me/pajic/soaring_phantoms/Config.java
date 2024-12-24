@@ -72,7 +72,12 @@ public class Config
         spawnFrequencyRandomOffsetBound = SPAWN_FREQUENCY_RANDOM_OFFSET_BOUND.get();
         phantomsRepelledByItem = PHANTOMS_REPELLED_BY_ITEM.get();
         repellentItems = REPELLENT_ITEMS.get().stream()
-                .map(itemName -> BuiltInRegistries.ITEM.get(ResourceLocation.parse(itemName)))
+                .map(itemName -> BuiltInRegistries.ITEM.get(
+                        //? if <= 1.21.1
+                        ResourceLocation.parse(itemName))
+                        //? if > 1.21.1
+                        /*ResourceLocation.parse(itemName)).orElseThrow().value()*/
+                )
                 .collect(Collectors.toSet());
     }
 }
