@@ -1,16 +1,14 @@
 {
-  "text.config.soaring_phantoms.title": "Soaring Phantoms Config Menu",
-  "text.config.soaring_phantoms.section.altitude-based-spawning": "Altitude-Based Phantom Spawning",
-  "text.config.soaring_phantoms.section.repel-phantoms": "Repel Phantoms with Held Item",
-  "text.config.soaring_phantoms.option.doAltitudeBasedSpawning": "Enable Altitude-Based Spawning",
-  "text.config.soaring_phantoms.option.doAltitudeBasedSpawning.tooltip": "Enable altitude-based spawning.\nGame will attempt to spawn phantoms when player is above defined start height.\nSpawn chance increases the higher the player is.\nDisables vanilla insomnia-based spawning.",
-  "text.config.soaring_phantoms.option.spawnStartHeight": "Spawn Start Height",
-  "text.config.soaring_phantoms.option.spawnStartHeight.tooltip": "Set Y height from which the game will attempt to spawn phantoms.\nThe chance of a spawn attempt succeeding is 1 - (startHeight / currentPlayerHeight).",
-  "text.config.soaring_phantoms.option.spawnFrequencyBase": "Spawn Frequency Base (seconds)",
-  "text.config.soaring_phantoms.option.spawnFrequencyBase.tooltip": "Amount of time in seconds between each phantom spawn attempt.",
-  "text.config.soaring_phantoms.option.spawnFrequencyRandomOffsetBound": "Spawn Frequency Random Offset Bound (seconds)",
-  "text.config.soaring_phantoms.option.spawnFrequencyRandomOffsetBound.tooltip": "Maximum amount of seconds to be added to the base spawn frequency,\nranging from 0 to the defined bound.",
-  "text.config.soaring_phantoms.option.phantomsRepelledByItem": "Repel Phantoms with Defined Held Items",
-  "text.config.soaring_phantoms.option.phantomsRepelledByItem.tooltip": "Phantoms will be unable to spawn if the player is holding\nany repellent item in their hand or offhand.\nDefine repellent items in the list below.",
-  "text.config.soaring_phantoms.option.repellentItems": "Repellent Items"
+  "soaring_phantoms.config": "Soaring Phantoms Config Menu",
+  "soaring_phantoms.config.doAltitudeBasedSpawning": "Enable altitude-based spawning",
+  "soaring_phantoms.config.doAltitudeBasedSpawning.desc": "Enable altitude-based spawning. Game will attempt to spawn phantoms when player is above defined start height. Spawn chance increases the higher the player is. Disables vanilla insomnia-based spawning.",
+  "soaring_phantoms.config.spawnStartHeight": "Spawn start height",
+  "soaring_phantoms.config.spawnStartHeight.desc": "Set Y height from which the game will attempt to spawn phantoms. The chance of a spawn attempt succeeding is 1 - (startHeight / currentPlayerHeight).",
+  "soaring_phantoms.config.spawnFrequencyBase": "Spawn frequency base (seconds)",
+  "soaring_phantoms.config.spawnFrequencyBase.desc": "Amount of time in seconds between each phantom spawn attempt.",
+  "soaring_phantoms.config.spawnFrequencyRandomOffsetBound": "Spawn frequency random offset bound (seconds)",
+  "soaring_phantoms.config.spawnFrequencyRandomOffsetBound.desc": "Maximum amount of seconds to be added to the base spawn frequency, ranging from 0 to the defined bound.",
+  "soaring_phantoms.config.phantomsRepelledByItem": "Repel phantoms with defined held items",
+  "soaring_phantoms.config.phantomsRepelledByItem.desc": "Phantoms will be unable to spawn if the player is holding any repellent item in their hand or offhand. Define repellent items in the list below.",
+  "soaring_phantoms.config.repellentItems": "Repellent items"
 }

@@ -1,13 +1,11 @@
 package me.pajic.soaring_phantoms;
 
+import me.fzzyhmstrs.fzzy_config.api.ConfigApiJava;
 import net.fabricmc.api.ModInitializer;
-import me.pajic.soaring_phantoms.ModConfig;
 
 public class Main implements ModInitializer {
-
-    public static final ModConfig CONFIG = ModConfig.createAndLoad();
+    public static ModConfig CONFIG = ConfigApiJava.registerAndLoadConfig(ModConfig::new);
 
     @Override
-    public void onInitialize() {
-    }
+    public void onInitialize() {}
 }
