@@ -1,3 +1,4 @@
 accessWidener v2 named
 
 accessible field net/minecraft/world/level/levelgen/PhantomSpawner nextTick I
+accessible class net/minecraft/world/entity/monster/Phantom$PhantomAttackPlayerTargetGoal

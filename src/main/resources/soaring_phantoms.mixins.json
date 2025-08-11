@@ -4,6 +4,7 @@
   "package": "me.pajic.soaring_phantoms.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "PhantomAttackPlayerTargetGoalMixin",
     "PhantomSpawnerMixin"
   ],
   "client": [

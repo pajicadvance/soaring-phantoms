@@ -5,6 +5,7 @@ import com.llamalad7.mixinextras.sugar.Local;
 import me.pajic.soaring_phantoms.Main;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -67,8 +68,13 @@ public class PhantomSpawnerMixin {
                     args = "intValue=72000"
             )
     )
-    private int modifyConditionCheckValue(int original, @Local BlockPos playerBlockPos) {
+    private int modifyConditionCheckValue(int original, @Local BlockPos playerBlockPos, @Local(argsOnly = true) ServerLevel level) {
         if (Main.CONFIG.doAltitudeBasedSpawning.get()) {
+            if (Main.CONFIG.passivePhantomsBeforeEnderDragon.get()) {
+                if (!level.getServer().getWorldData().endDragonFightData().previouslyKilled()) {
+                    return Main.CONFIG.passiveSpawnStartHeight.get();
+                }
+            }
             return Main.CONFIG.spawnStartHeight.get();
         }
         return original;

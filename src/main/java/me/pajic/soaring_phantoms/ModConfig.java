@@ -16,9 +16,12 @@ public class ModConfig extends Config {
     }
 
     public ValidatedBoolean doAltitudeBasedSpawning = new ValidatedBoolean(true);
+    public ValidatedBoolean passivePhantomsBeforeEnderDragon = new ValidatedBoolean(false);
+    public ValidatedBoolean alwaysAggressiveInEnd = new ValidatedBoolean(true);
     public ValidatedInt spawnStartHeight = new ValidatedInt(160, 320, -64);
-    public ValidatedInt spawnFrequencyBase = new ValidatedInt(10, 300, 1);
-    public ValidatedInt spawnFrequencyRandomOffsetBound = new ValidatedInt(10, 300, 1);
+    public ValidatedInt passiveSpawnStartHeight = new ValidatedInt(96, 320, -64);
+    public ValidatedInt spawnFrequencyBase = new ValidatedInt(20, 300, 1);
+    public ValidatedInt spawnFrequencyRandomOffsetBound = new ValidatedInt(20, 300, 1);
     public ValidatedBoolean phantomsRepelledByItem = new ValidatedBoolean(true);
     public ValidatedList<ResourceLocation> repellentItems = ValidatedIdentifier.ofRegistry(
             ResourceLocation.withDefaultNamespace("phantom_membrane"),
