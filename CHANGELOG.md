@@ -1,5 +1,1 @@
-- Added new option "Passive phantoms before the Ender Dragon": 
-  - When enabled, phantoms won't attack the player until the player provokes them, and will spawn above the passive spawn start height, which is lower than the normal spawn start height by default.
-  - After defeating the Ender Dragon, phantoms will return to normal behavior.
-  - Phantoms will always be aggressive when spawned in The End, no matter if this option is enabled (configurable).
-  - This option is **disabled** by default.
+- Updated to Minecraft 1.21.10.
