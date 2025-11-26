@@ -85,10 +85,6 @@ repositories {
 
 dependencies {
 	implementation( "me.fzzyhmstrs:fzzy_config:${prop("deps.fzzy_config")}+neoforge")
-	implementation("com.moulberry:mixinconstraints:${prop("deps.mixinconstraints")}")
-	jarJar("com.moulberry:mixinconstraints:${prop("deps.mixinconstraints")}")
-	implementation("com.github.ramixin:mixson-neoforge:${prop("deps.mixson")}")
-	jarJar("com.github.ramixin:mixson-neoforge:${prop("deps.mixson")}")
 }
 
 tasks.named("createMinecraftArtifacts") {

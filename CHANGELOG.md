@@ -1,0 +1,2 @@
+- Updated NeoForge versions.
+- Internal changes. This should not affect anything in the mod in any way. Please report any bugs or discrepancies at the issue tracker.
