@@ -8,7 +8,7 @@ import me.fzzyhmstrs.fzzy_config.validation.misc.ValidatedBoolean;
 import me.fzzyhmstrs.fzzy_config.validation.number.ValidatedInt;
 import me.pajic.soaring_phantoms.SoaringPhantoms;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 @Version(version = 1)
 public class ModConfig extends Config {
@@ -24,10 +24,10 @@ public class ModConfig extends Config {
 	public ValidatedInt spawnFrequencyBase = new ValidatedInt(20, 300, 1);
 	public ValidatedInt spawnFrequencyRandomOffsetBound = new ValidatedInt(20, 300, 1);
 	public ValidatedBoolean phantomsRepelledByItem = new ValidatedBoolean(true);
-	public ValidatedList<ResourceLocation> repellentItems = ValidatedIdentifier.ofRegistry(
-			ResourceLocation.withDefaultNamespace("phantom_membrane"),
+	public ValidatedList<Identifier> repellentItems = ValidatedIdentifier.ofRegistry(
+			Identifier.withDefaultNamespace("phantom_membrane"),
 			BuiltInRegistries.ITEM
 	).toList(
-			ResourceLocation.withDefaultNamespace("phantom_membrane")
+			Identifier.withDefaultNamespace("phantom_membrane")
 	);
 }
