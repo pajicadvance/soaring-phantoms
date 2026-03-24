@@ -1,0 +1,20 @@
+{
+  "soaring_phantoms.config": "Soaring Phantoms Config Menu",
+  "soaring_phantoms.config.doAltitudeBasedSpawning": "Enable altitude-based spawning",
+  "soaring_phantoms.config.doAltitudeBasedSpawning.desc": "Enable altitude-based spawning. Game will attempt to spawn phantoms when player is above defined start height. Spawn chance increases the higher the player is. Disables vanilla insomnia-based spawning.",
+  "soaring_phantoms.config.passivePhantomsBeforeEnderDragon": "Passive phantoms before the Ender Dragon",
+  "soaring_phantoms.config.passivePhantomsBeforeEnderDragon.desc": "When enabled, phantoms won't attack the player until the player provokes them, and will spawn above the passive spawn start height. After defeating the Ender Dragon, phantoms will return to normal behavior.",
+  "soaring_phantoms.config.alwaysAggressiveInEnd": "Phantoms always aggressive in The End",
+  "soaring_phantoms.config.alwaysAggressiveInEnd.desc": "When enabled, phantoms will always spawn aggressive in The End, no matter if Passive phantoms before the Ender Dragon is turned on",
+  "soaring_phantoms.config.spawnStartHeight": "Spawn start height",
+  "soaring_phantoms.config.spawnStartHeight.desc": "Set Y height from which the game will attempt to spawn phantoms. The chance of a spawn attempt succeeding is 1 - (startHeight / currentPlayerHeight).",
+  "soaring_phantoms.config.passiveSpawnStartHeight": "Passive spawn start height",
+  "soaring_phantoms.config.passiveSpawnStartHeight.desc": "If Passive phantoms before The End is enabled, phantoms will spawn starting from this height until a portal to The End is opened.",
+  "soaring_phantoms.config.spawnFrequencyBase": "Spawn frequency base (seconds)",
+  "soaring_phantoms.config.spawnFrequencyBase.desc": "Amount of time in seconds between each phantom spawn attempt.",
+  "soaring_phantoms.config.spawnFrequencyRandomOffsetBound": "Spawn frequency random offset bound (seconds)",
+  "soaring_phantoms.config.spawnFrequencyRandomOffsetBound.desc": "Maximum amount of seconds to be added to the base spawn frequency, ranging from 0 to the defined bound.",
+  "soaring_phantoms.config.phantomsRepelledByItem": "Repel phantoms with defined held items",
+  "soaring_phantoms.config.phantomsRepelledByItem.desc": "Phantoms will be unable to spawn if the player is holding any repellent item in their hand or offhand. Define repellent items in the list below.",
+  "soaring_phantoms.config.repellentItems": "Repellent items"
+}

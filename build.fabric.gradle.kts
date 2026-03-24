@@ -55,8 +55,6 @@ repositories {
 dependencies {
 	minecraft("com.mojang:minecraft:${prop("deps.minecraft")}")
 	implementation(libs.fabric.loader)
-	implementation(libs.moulberry.mixinconstraints)
-	include(libs.moulberry.mixinconstraints)
 	implementation("net.fabricmc.fabric-api:fabric-api:${prop("deps.fabric-api")}")
 	localRuntime("com.terraformersmc:modmenu:${prop("deps.modmenu")}")
 	implementation("me.fzzyhmstrs:fzzy_config:${prop("deps.fzzy_config")}")
