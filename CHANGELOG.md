@@ -1,1 +1,1 @@
-- Updated to Minecraft 26.1.
+- Fixed crash when attempting to spawn phantoms while the player is below Y=1.

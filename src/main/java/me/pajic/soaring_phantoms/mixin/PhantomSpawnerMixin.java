@@ -28,8 +28,8 @@ public class PhantomSpawnerMixin {
                     ordinal = 1
             )
     )
-    private void modifySpawnCheckFrequency(PhantomSpawner instance, int value, @Local RandomSource randomSource) {
-        instance.nextTick += (SoaringPhantoms.CONFIG.spawnFrequencyBase.get() + randomSource.nextInt(SoaringPhantoms.CONFIG.spawnFrequencyRandomOffsetBound.get())) * 20;
+    private void modifySpawnCheckFrequency(PhantomSpawner instance, int value, @Local(name = "random") RandomSource random) {
+        instance.nextTick += (SoaringPhantoms.CONFIG.spawnFrequencyBase.get() + random.nextInt(SoaringPhantoms.CONFIG.spawnFrequencyRandomOffsetBound.get())) * 20;
     }
 
     @ModifyExpressionValue(
@@ -39,12 +39,12 @@ public class PhantomSpawnerMixin {
                     target = "Lnet/minecraft/server/level/ServerPlayer;isSpectator()Z"
             )
     )
-    private boolean repelIfHoldingRepellentItem(boolean original, @Local ServerPlayer serverPlayer) {
+    private boolean repelIfHoldingRepellentItem(boolean original, @Local(name = "player") ServerPlayer player) {
         if (original || !SoaringPhantoms.CONFIG.phantomsRepelledByItem.get()) {
             return true;
         }
-        return SoaringPhantoms.CONFIG.repellentItems.get().contains(BuiltInRegistries.ITEM.getKey(serverPlayer.getItemInHand(InteractionHand.MAIN_HAND).getItem())) ||
-				SoaringPhantoms.CONFIG.repellentItems.get().contains(BuiltInRegistries.ITEM.getKey(serverPlayer.getItemInHand(InteractionHand.OFF_HAND).getItem()));
+        return SoaringPhantoms.CONFIG.repellentItems.get().contains(BuiltInRegistries.ITEM.getKey(player.getItemInHand(InteractionHand.MAIN_HAND).getItem())) ||
+				SoaringPhantoms.CONFIG.repellentItems.get().contains(BuiltInRegistries.ITEM.getKey(player.getItemInHand(InteractionHand.OFF_HAND).getItem()));
     }
 
     @ModifyExpressionValue(
@@ -55,9 +55,9 @@ public class PhantomSpawnerMixin {
                     ordinal = 1
             )
     )
-    private int modifyCondition(int original, @Local BlockPos playerBlockPos, @Local RandomSource randomSource) {
+    private int modifyCondition(int original, @Local(name = "playerPos") BlockPos playerPos, @Local(name = "random") RandomSource random) {
         if (SoaringPhantoms.CONFIG.doAltitudeBasedSpawning.get()) {
-            return randomSource.nextInt(playerBlockPos.getY());
+            return random.nextInt(Math.max(1, playerPos.getY()));
         }
         return original;
     }
