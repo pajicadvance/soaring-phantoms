@@ -57,7 +57,8 @@ public class PhantomSpawnerMixin {
     )
     private int modifyCondition(int original, @Local(name = "playerPos") BlockPos playerPos, @Local(name = "random") RandomSource random) {
         if (SoaringPhantoms.CONFIG.doAltitudeBasedSpawning.get()) {
-            return random.nextInt(Math.max(1, playerPos.getY()));
+			int y = playerPos.getY();
+            return y < 1 ? 0 : random.nextInt(y);
         }
         return original;
     }
@@ -69,7 +70,7 @@ public class PhantomSpawnerMixin {
                     args = "intValue=72000"
             )
     )
-    private int modifyConditionCheckValue(int original, @Local(argsOnly = true) ServerLevel level) {
+    private int modifyConditionCheckValue(int original, @Local(argsOnly = true, name = "level") ServerLevel level) {
         if (SoaringPhantoms.CONFIG.doAltitudeBasedSpawning.get()) {
             if (SoaringPhantoms.CONFIG.passivePhantomsBeforeEnderDragon.get()) {
 				EnderDragonFight fight = level.getServer().getDataStorage().get(EnderDragonFight.TYPE);
