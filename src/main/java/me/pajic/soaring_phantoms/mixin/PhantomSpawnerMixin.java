@@ -70,7 +70,7 @@ public class PhantomSpawnerMixin {
                     args = "intValue=72000"
             )
     )
-    private int modifyConditionCheckValue(int original, @Local(argsOnly = true, name = "level") ServerLevel level) {
+    private int modifyConditionCheckValue(int original, @Local(name = "level") ServerLevel level) {
         if (SoaringPhantoms.CONFIG.doAltitudeBasedSpawning.get()) {
             if (SoaringPhantoms.CONFIG.passivePhantomsBeforeEnderDragon.get()) {
 				EnderDragonFight fight = level.getServer().getDataStorage().get(EnderDragonFight.TYPE);
