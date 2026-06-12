@@ -27,7 +27,7 @@ public class PhantomAttackPlayerTargetGoalMixin {
             }
             if (!(this$0.getLastAttacker() instanceof Player) && !level.isClientSide()) {
 				EnderDragonFight fight = ((ServerLevel) level).getServer().getDataStorage().get(EnderDragonFight.TYPE);
-                if (fight != null && !fight.hasPreviouslyKilledDragon()) return false;
+                if (fight == null || !fight.hasPreviouslyKilledDragon()) return false;
             }
         }
         return original.call();
