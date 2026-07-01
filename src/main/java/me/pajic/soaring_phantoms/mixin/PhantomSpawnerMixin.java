@@ -40,9 +40,7 @@ public class PhantomSpawnerMixin {
             )
     )
     private boolean repelIfHoldingRepellentItem(boolean original, @Local(name = "player") ServerPlayer player) {
-        if (original || !SoaringPhantoms.CONFIG.phantomsRepelledByItem.get()) {
-            return true;
-        }
+        if (original || !SoaringPhantoms.CONFIG.phantomsRepelledByItem.get()) return original;
         return SoaringPhantoms.CONFIG.repellentItems.get().contains(BuiltInRegistries.ITEM.getKey(player.getItemInHand(InteractionHand.MAIN_HAND).getItem())) ||
 				SoaringPhantoms.CONFIG.repellentItems.get().contains(BuiltInRegistries.ITEM.getKey(player.getItemInHand(InteractionHand.OFF_HAND).getItem()));
     }

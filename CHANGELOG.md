@@ -1,2 +1,1 @@
-- Fixed a bug that sometimes caused phantoms to spawn aggressive even when "Passive phantoms before the Ender Dragon" is enabled and the Ender Dragon hasn't been defeated yet.
-- Preparation for MC 26.2. This version will be flagged as 26.2 compatible once it releases, and will still work on 26.1.
+- Fixed phantoms not spawning at all when "Repel phantoms with defined held items" is turned off.
