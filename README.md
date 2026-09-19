@@ -1,33 +1,34 @@
-# Multicutter
+# Soaring Phantoms
 
-Based on [Stonecutter Fabric & NeoForge template](https://github.com/stonecutter-versioning/stonecutter-template-multiloader)
+This mod changes how phantom spawning works. Phantoms now spawn only at high altitudes at night, regardless of whether you slept or not. Holding a phantom membrane in your hands prevents all phantom spawns. The goal is to replace the notoriously annoying vanilla spawn mechanics with non-intrusive and reliable spawn mechanics.
 
-- Multiloader and multiversion management with helper classes
-- Supports both obfuscated and unobfuscated game versions
-- Dependency handling using Stonecutter versioned properties
-- Versioned class tweakers and access transformers
-- Automatic Mixin and entrypoint registration
-- Automated Modrinth and CurseForge publishing
+## Features
 
-### Pre-configured content
+### Altitude-based phantom spawning
+When enabled, the game attempts to spawn phantoms around the player at nighttime and when they're above the defined starting Y height. The chance that the spawn attempt will succeed is based on how much higher the player is above the starting Y height.
+- Replaces the vanilla insomnia-based phantom spawning mechanic
+- Setting the `doInsomnia` game rule to `false` still disables all phantom spawns
+- Phantoms still only spawn at night, and still won't spawn if there is a block above the player that blocks light
+- The chance of the spawn attempt succeeding is the following: `1 - (startingYHeight / playerYPosition)`
 
-- Versions:
-    - 1.21.1 Fabric and NeoForge
-    - 26.1.2 Fabric and NeoForge
-    - 26.2 Fabric and NeoForge
-- Dependencies:
-    - Fabric API (required)
-    - Fzzy Config (required)
-    - Mixson (required)
-    - MixinConstraints (JiJ-d)
-    - Sodium (runtime)
+Configuration options:
+- Toggle altitude-based spawning on or off
+- Set the starting Y height for spawning (default 160)
+- Set the frequency at which the spawn check will run, in seconds (default 30 + random number from 0 to 29)
 
-No instructions on how to use this yet. If you do want to try it out, the only big difference compared to other templates is that dependencies are declared inside `stonecutter.properties.toml` and not manually inside the build scripts. You only need to add repositories to the build scripts. You can see how pre-configured dependencies are added as examples.
+### Passive phantoms before the Ender Dragon
+When enabled, phantoms won't attack the player until the player provokes them, and will spawn above the passive spawn start height, which is lower than the normal spawn start height by default. After defeating the Ender Dragon, phantoms will return to being aggressive on spawn. Phantoms which spawn in the End are always aggressive by default.
 
-Tooling used:
-- [Fabric Loom](https://github.com/FabricMC/fabric-loom): Used for the Fabric build script
-- [ModDevGradle](https://github.com/neoforged/ModDevGradle): Used for the NeoForge build script
-- [Stonecutter](https://stonecutter.kikugie.dev/): Multiloader and multiversion handling
-- [Loom Backwards Compatibility](https://codeberg.org/KikuGie/loom-back-compat): Allows the Fabric build script to handle both obfuscated and unobfuscated versions of the game
-- [Fletching Table](https://stonecutter.kikugie.dev/wiki/fletching-table/#fletching-table-overview): Handles automatic mixin and entrypoint registration
-- [Mod Publish Plugin](https://github.com/modmuss50/mod-publish-plugin): Handles automated publishing to Modrinth and CurseForge
+This feature is **disabled** by default.
+
+Configuration options:
+- Toggle the feature on or off
+- Set the starting Y height for passive spawning (default 96)
+- Control whether phantoms spawned in the End should be always aggressive or not
+
+### Repel phantom spawns with defined items
+When enabled, phantoms will be unable to spawn if the player is holding any item defined as a repellent item in their main hand or off-hand.
+
+Configuration options:
+- Toggle phantom repelling on or off
+- Add new items to the phantom repellent item list (default: `minecraft:phantom_membrane`)

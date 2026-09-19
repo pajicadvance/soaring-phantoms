@@ -1,9 +1,8 @@
 {
   "required": true,
-  "package": "me.pajic.modid.mixin",
+  "package": "me.pajic.soaring_phantoms.mixin",
   "minVersion": "0.8",
   "compatibilityLevel": "${java}",
-  "plugin": "com.moulberry.mixinconstraints.ConstraintsMixinPlugin",
   "injectors": {
     "defaultRequire": 1
   },
